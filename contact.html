@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Contact — A little moment of wonder</title>
+  <style>
+    :root { color-scheme: dark; --ink: #f5f3ff; --muted: #b7b6d4; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; overflow-x: hidden; color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: radial-gradient(ellipse at 50% 42%, #29204c 0%, #15162f 35%, #0b1020 74%); }
+    body::before, body::after { content: ""; position: fixed; inset: 0; pointer-events: none; }
+    body::before { opacity: .55; background-image: radial-gradient(1px 1px at 12% 24%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 83% 18%, #d9d2ff 99%, transparent), radial-gradient(1px 1px at 70% 76%, #fff 99%, transparent), radial-gradient(2px 2px at 24% 82%, #c4b5fd 99%, transparent), radial-gradient(1px 1px at 91% 57%, #fff 99%, transparent); background-size: 390px 310px; }
+    body::after { background: linear-gradient(115deg, transparent 20%, #a78bfa08 48%, transparent 70%); }
+    .site-nav { position: fixed; z-index: 2; top: 0; left: 0; width: 100%; display: flex; justify-content: center; gap: 8px; padding: 22px 18px; }
+    .site-nav a { color: #b7b6d4; text-decoration: none; font-size: 13px; font-weight: 600; padding: 9px 15px; border-radius: 999px; border: 1px solid transparent; transition: .2s ease; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: #fff; border-color: #ffffff24; background: #ffffff0c; }
+    main { position: relative; width: min(92vw, 720px); padding: 112px 24px 105px; text-align: center; }
+    .eyebrow { color: #c4b5fd; text-transform: uppercase; letter-spacing: .24em; font-size: 11px; font-weight: 700; }
+    h1 { margin: 17px 0 18px; font-size: clamp(46px, 8vw, 76px); letter-spacing: -.065em; line-height: .98; font-weight: 760; }
+    h1 span { color: transparent; background: linear-gradient(100deg, #fff 15%, #d8ccff 52%, #a78bfa 90%); background-clip: text; -webkit-background-clip: text; }
+    .intro { max-width: 500px; margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .contact-card { max-width: 500px; margin: 34px auto 0; padding: 26px; text-align: left; border: 1px solid #ffffff1c; border-radius: 22px; background: #ffffff09; box-shadow: 0 22px 60px #0003; }
+    label { display: block; margin: 0 0 8px; color: #e6e1fa; font-size: 13px; font-weight: 650; }
+    input, textarea { width: 100%; margin: 0 0 18px; padding: 13px 14px; border: 1px solid #ffffff20; border-radius: 12px; outline: none; color: #fff; background: #0b102055; font: inherit; font-size: 14px; transition: border-color .2s, box-shadow .2s; }
+    input:focus, textarea:focus { border-color: #a78bfa; box-shadow: 0 0 0 3px #a78bfa25; }
+    textarea { min-height: 120px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #8584a4; }
+    button { display: inline-flex; align-items: center; gap: 10px; padding: 13px 19px; border: 1px solid #c4b5fd66; border-radius: 999px; color: #fff; background: linear-gradient(110deg, #7c5bd0, #6042a8); font: inherit; font-size: 14px; font-weight: 650; cursor: pointer; box-shadow: 0 8px 25px #5b3da844; transition: .2s ease; }
+    button:hover { transform: translateY(-2px); box-shadow: 0 12px 30px #8b5cf655; }
+    .hint { margin: 16px 0 0; color: #9998b8; font-size: 12px; line-height: 1.6; }
+    footer { position: absolute; bottom: 24px; left: 0; width: 100%; text-align: center; color: #8989a9; font-size: 12px; letter-spacing: .04em; }
+    @media (max-width: 520px) { main { padding: 100px 18px 55px; } .contact-card { padding: 20px; } footer { position: relative; bottom: auto; padding: 0 10px 22px; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+  </nav>
+  <main>
+    <div class="eyebrow">The next hello is yours</div>
+    <h1><span>Let’s talk.</span></h1>
+    <p class="intro">Have a thought, a question, or an idea to share? Send a little note and start the conversation.</p>
+    <form class="contact-card" action="mailto:hello@example.com" method="post" enctype="text/plain">
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" placeholder="What should we call you?" required>
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <label for="message">Your message</label>
+      <textarea id="message" name="message" placeholder="Write your note here…" required></textarea>
+      <button type="submit">Send a note <span aria-hidden="true">↗</span></button>
+      <p class="hint">This demo opens your email app to send the message. Replace <strong>hello@example.com</strong> in the page source with your email address.</p>
+    </form>
+  </main>
+  <footer>MADE OF CURIOSITY&nbsp; · &nbsp;READY FOR WHAT’S NEXT</footer>
+</body>
+</html>
