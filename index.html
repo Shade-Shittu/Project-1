@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Hello, World — A little moment of wonder</title>
+  <style>
+    :root { color-scheme: dark; --ink: #f5f3ff; --muted: #b7b6d4; --glow: #a78bfa; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center; overflow: hidden;
+      color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 50% 42%, #29204c 0%, #15162f 35%, #0b1020 74%);
+    }
+    body::before, body::after { content: ""; position: fixed; inset: 0; pointer-events: none; }
+    body::before {
+      opacity: .55; background-image: radial-gradient(1px 1px at 12% 24%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 83% 18%, #d9d2ff 99%, transparent), radial-gradient(1px 1px at 70% 76%, #fff 99%, transparent), radial-gradient(2px 2px at 24% 82%, #c4b5fd 99%, transparent), radial-gradient(1px 1px at 91% 57%, #fff 99%, transparent), radial-gradient(1px 1px at 44% 14%, #fff 99%, transparent);
+      background-size: 390px 310px;
+    }
+    body::after { background: linear-gradient(115deg, transparent 20%, #a78bfa08 48%, transparent 70%); }
+    main { position: relative; width: min(92vw, 760px); padding: 72px 42px 66px; text-align: center; }
+    .orb {
+      width: 104px; height: 104px; margin: 0 auto 34px; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 34% 28%, #fff 0 3%, #ddd6fe 9%, #a78bfa 31%, #7651d5 61%, #392567 100%);
+      box-shadow: 0 0 32px #a78bfa88, 0 0 100px #8b5cf655, inset -12px -14px 26px #25154188;
+      animation: float 5s ease-in-out infinite;
+    }
+    .orb::before { content: ""; position: absolute; inset: -12px; border: 1px solid #d8ccff55; border-radius: 50%; transform: rotate(-24deg) scaleY(.34); }
+    .orb::after { content: "✦"; position: absolute; top: -19px; right: -30px; color: #fff3bf; font-size: 23px; text-shadow: 0 0 18px #fff; }
+    .eyebrow { color: #c4b5fd; text-transform: uppercase; letter-spacing: .24em; font-size: 11px; font-weight: 700; }
+    h1 { margin: 17px 0 18px; font-size: clamp(48px, 9vw, 86px); letter-spacing: -.065em; line-height: .98; font-weight: 760; }
+    h1 span { color: transparent; background: linear-gradient(100deg, #fff 15%, #d8ccff 52%, #a78bfa 90%); background-clip: text; -webkit-background-clip: text; }
+    .intro { max-width: 490px; margin: 0 auto; color: var(--muted); font-size: clamp(15px, 2vw, 18px); line-height: 1.75; }
+    .button { display: inline-flex; gap: 10px; align-items: center; margin-top: 33px; padding: 13px 20px; border: 1px solid #ffffff27; border-radius: 999px; color: #fff; text-decoration: none; font-size: 14px; font-weight: 650; background: #ffffff0d; box-shadow: 0 8px 30px #0002; transition: .2s ease; }
+    .button:hover { transform: translateY(-2px); border-color: #c4b5fd88; background: #a78bfa20; }
+    .button span { color: #c4b5fd; font-size: 18px; }
+    footer { position: fixed; bottom: 24px; left: 0; width: 100%; text-align: center; color: #8989a9; font-size: 12px; letter-spacing: .04em; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @media (max-width: 520px) { main { padding: 56px 22px; } .orb { width: 84px; height: 84px; margin-bottom: 29px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="orb" aria-hidden="true"></div>
+    <div class="eyebrow">A little moment of wonder</div>
+    <h1><span>Hello, World.</span></h1>
+    <p class="intro">Every great adventure starts with a simple hello. Here’s to the ideas, discoveries, and bright new things waiting just beyond this page.</p>
+    <a class="button" href="#hello" onclick="this.querySelector('span').textContent='✦'; this.lastChild.textContent=' You said hello'; return false;"><span>✦</span> Say hello</a>
+  </main>
+  <footer>MADE OF CURIOSITY&nbsp; · &nbsp;READY FOR WHAT’S NEXT</footer>
+</body>
+</html>
